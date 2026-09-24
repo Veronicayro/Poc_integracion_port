@@ -1,0 +1,36 @@
+name: Deploy Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "GitHub Environment"
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment || 'dev' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deployment
+        run: |
+          echo "Deploying port-ocean-github-demo"
+          echo "Environment: ${{ inputs.environment || 'dev' }}"
+          echo "Commit: $GITHUB_SHA"
+
+      - name: Deployment status
+        run: echo "Deployment completed successfully"

@@ -1,0 +1,10 @@
+{
+  "name": "@port-lab/ocean-github-demo",
+  "version": "1.0.0",
+  "description": "Package used for Port GitHub Ocean lab testing",
+  "private": false,
+  "main": "src/app.py",
+  "scripts": {
+    "test": "echo \"No Node tests configured\""
+  }
+}

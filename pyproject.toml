@@ -1,0 +1,9 @@
+[project]
+name = "port-ocean-github-demo"
+version = "1.0.0"
+description = "Lab repository for testing Port GitHub Ocean ingestion"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
